@@ -3,17 +3,34 @@ const express = require("express");
 const router = express.Router();
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
-
+const path = require("path");
+const hbs = require("hbs");
+const app = express();
 require("../db/conn");
+const static_path = path.join(__dirname,"../public");
+const templatPath = path.join(__dirname,"../server/templates/views");
+const partialPath = path.join(__dirname,"../server/templates/partials");
+
+app.use(express.json());
+app.use(express.urlencoded({extended:false}));
+
+
 
 const User = require("../model/userSchema");
 
 
+router.use(express.static(static_path));
+app.set("view engine","hbs");
+app.set("views",templatPath);
+hbs.registerPartials(partialPath);
 //home page code here
 router.get("/",(req , res) =>{
-    res.send("hello user auth.js");
+    res.render("index");
 });
 
+router.get("/signin",(req , res) =>{
+    res.render("signin");
+});
 
 //registration page code here
 router.post("/register",async (req,res) => {
@@ -51,7 +68,7 @@ router.post("/register",async (req,res) => {
 
 
 //login page code here
-router.post("/login",async (req,res) => {
+router.post("/signin",async (req,res) => {
 
     try{
 

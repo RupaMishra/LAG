@@ -1,0 +1,16 @@
+.main_head{float: left;width: 100%;}
+.top_head{float: left; width: 100%;}
+.main_head .top_head{width:100%; float:left; background-color:rgb(19, 1, 19)}
+.main_head .top_head .welcom{padding:0px; font-family: Oswald Regular; color: white;}
+.brand{float: left; width: 100%; justify-content: center; display: inline-flex; background-color: palegreen; padding: 8px;}
+.brand img{width: 95px; height: 95px;}
+.brand h2{ color:rgb(74, 38, 19);text-transform: uppercase; font-weight: 600px; font-family: Oswald Regular;font-size: 40px; padding: 2px;font-weight: 600;
+    padding: 5px 0px 0px 8px;}
+.brand_div{float: left;width: 100%; background-color: yellow; }
+.srch{ float: left; width: 100%; background-color: green;}
+.search{background-color: violet; float: left; width: 100%; display: inline-flex;}
+.search_box{justify-content: center;background-color: yellow;  background-color: white;border-radius: 25px;}
+.search_text{width: 400px;height: 40px;border: none; border-radius: 25px; padding: 13px;}
+.search_box a{font-size: 25px; color: purple;font-size: 19px; padding: 0px 11px 0px 0px;} 
+.cart_div ul li{display: inline-block; padding: 10px;}
+.cart_div ul li i{color: purple;font-weight: bold;font-size: 15px;}

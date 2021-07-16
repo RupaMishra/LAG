@@ -1,0 +1,221 @@
+
+
+.main_head{ 
+    width:100%;
+     float:left;
+    }
+.main_head .top_head{
+     width:100%; 
+     float:left;
+      background-color:#f16929;
+    }
+.main_head .top_head .welcom{ 
+    padding:0px;
+}
+
+.main_head .top_head .social_icon{
+    position:relative;
+    /* background-color: aqua; */
+}
+.main_head .top_head .social_icon ul{
+     list-style:none;
+     margin-right: -51px;
+      padding:0px;}
+.main_head .top_head .social_icon ul li{
+     padding:10px 4px;
+      display:inline-block;
+    }
+.main_head .top_head .social_icon ul li a{
+     color:#fff; 
+     padding:5px 5px;
+    }
+/* .main_head .top_head .social_icon .facebook{} */
+.main_head .top_head .social_icon .facebook:hover{
+    background-color: #3b5998;
+}
+/* .main_head .top_head .social_icon .twitter{} */
+.main_head .top_head .social_icon .twitter:hover{
+     background-color: #38A1F3;
+    }
+/* .main_head .top_head .social_icon .linkedin{} */
+.main_head .top_head .social_icon .linkedin:hover{
+        background-color: #0077B5;
+    }
+/* .main_head .top_head .social_icon .google-plus{} */
+.main_head .top_head .social_icon .google-plus:hover{   
+     background-color:#d34836;
+    }
+.main_head .navbar_y{
+         /* border-bottom: #0077B5; */
+           width:100%;
+            float:left;
+            /* padding: 10px 0px;  */
+             /* background-color:rgb(241, 241, 243); */
+
+         
+            
+               }
+/* .main_head .navbar_y .logo_d{ } */
+.main_head .navbar_y .logo_d img{ 
+    width:100%; 
+    float:left;
+    height: 80px;
+    width: 80px;
+    margin-left: 20px;
+}
+.main_head .navbar_y .brand_name{
+    /* background-color: #d34836; */
+    float: left;
+    padding: 25px 10px;
+    font-size: 20px;
+    /* font-family: marriwealth; */
+    color:purple;
+    font-weight: 700;
+}
+/* .main_head .navbar_y .login_tr{
+    margin-top: 27px;
+} */
+.cart_div{
+     position:relative;
+     /* padding-left: 88px; */
+     float:left;
+    
+     /* background-color:palevioletred; */
+    }
+.cart_div ul{
+     list-style:none;
+     margin-right: 70px;
+     padding: 0px;
+    }
+.cart_div ul li{ 
+    display:inline-block;
+    padding:30px 7px;
+    font-size: 17px;
+}
+
+.cart_div ul li i{ 
+    display:inline-block;
+    color:purple;
+    
+}
+
+ .search_box .search_text{
+  border: none;
+  /* background: palegreen; */
+  outline: none;
+  text-align: center;
+  padding: 0;
+  font-size: 16px;
+  transition: 0.4s;
+  /* line-height: 40px; */
+  width: 0px;
+  position: absolute;
+    left: -174px;
+}
+.search_box:hover > .search_text{
+    width: 167px;
+    position: absolute;
+    top: 20px;
+    left: -167px;
+    height: 41px;
+    padding: 0px 13px;
+    border-radius: 3px;
+}
+
+.menu_div{
+     /* position:relative; */
+     /* background-color: yellow; */
+     float: left;
+     /* margin-left: 2px; */
+    
+    }
+.menu_div{ 
+    list-style:none;
+    /* background-color: red; */
+    padding-top: 8px;
+}
+.menu_div ul li{
+     display:inline-block;
+     
+}
+.menu_div ul li a{
+    display:inline-block;
+    padding: 19px 7px;
+    color: purple;
+    text-decoration: none;
+    font-size: 19px;
+    font-weight: 700;
+    font-family: marriwealth;
+}
+.menu_div ul li a:hover{
+    color:rgb(98, 5, 151);
+    border-radius: 31px;
+}
+.dropdown_menu{
+      display:none;
+      background-color: yellow;
+      position:absolute;
+      z-index: 1;
+ } .menu_div ul li:hover>.dropdown_menu {
+     display: block;
+ }
+.welcom{
+    float: left;
+    margin-left: 400px;
+  color:lemonchiffon;
+}
+.head{
+    background-color: #0077B5;
+    padding-top: 200px;
+}
+.slider_data{
+    width: 100%;
+    float: left;
+    
+   
+}
+.nav{
+    background-color: yellow;
+    height: 500px;
+    float: left;
+    width: 100%;
+}
+
+/* -------------------------------------------------------------------------------------------------- */
+
+.nav-item a{
+    display: block;
+
+}
+.search_box {
+	height: 41px;
+	padding: 7px 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

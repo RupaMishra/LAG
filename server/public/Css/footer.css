@@ -1,0 +1,54 @@
+.footer_div{
+    background-color:rgb(121, 118, 118);
+    float: left;
+    width: 100%;
+    padding: 40px;
+}
+.foot{
+    /* background-color: red; */
+    
+}
+.foot{
+  color: white;
+    
+}
+.f_category{
+    /* background-color: pink; */
+    /* text-align: center; */
+}
+.f_category ul{
+    list-style: none;
+   padding: 0px;
+}
+.f_category ul li{
+   padding: 5px;
+   
+
+}
+.f_category ul li a{
+    text-decoration: none;
+    text-align: left;
+    color: white;
+
+}
+.f_category ul li a:hover{  color:orange; border-bottom: 1px solid white;}
+.f_combo{/* background-color: orangered; */}
+.f_combo ul{list-style: none;padding: 0px;}
+.f_combo ul li{padding: 5px;}
+.f_combo ul li a{ text-decoration: none;text-align: left;color: white;}
+.f_combo ul li a:hover{color:orange;border-bottom: 1px solid white;}
+.f_service{ /* background-color: blueviolet; */}
+.f_service ul{list-style: none;padding: 0px;}
+.f_service ul li{padding: 5px;}
+.f_service ul li a{ text-decoration: none;text-align: left;color: white;}
+.f_service ul li a:hover{color:orange;border-bottom: 1px solid white;}
+/* .f_info{ background-color: springgreen;  } */
+.f_info p{color: white;}
+.f_bottom{border-top: 1px solid gray; text-align: center; color:white;}
+.f_offers{ float: left; width: 100%; padding: 10px 0px 10px;}
+.f_offers .f_offerstxt{width: 350px;height: 50px;  border: transparent;}
+.f_srch_btn {color: white;padding: 15px; font-weight: 400px; background-color:orange;}
+.f_srch_btn:hover{text-decoration: none;color: white;}
+.f_payment {}
+.f_payment img{ height: 30px; width: 55px;}
+.f_payment h6{text-align:center;}
