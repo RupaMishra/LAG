@@ -6,6 +6,7 @@ const path = require("path");
 const hbs = require("hbs");
 dotenv.config({ path: "./config.env" });
 
+
 require("./db/conn");   //connection to db
 
 const PORT = process.env.PORT || 3000;
@@ -26,7 +27,9 @@ app.get("/",(req , res) =>{
     res.render("index");
 });
 
+//app.use("cors()");
 app.use(express.json());
+app.use(express.urlencoded({extended:false}));  
 // app.use(express.static(static_path));
 app.use(require('./routes/auth'));
 const user = require("./model/userSchema"); //connection to user

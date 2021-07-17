@@ -6,23 +6,23 @@ const bcrypt = require("bcryptjs");
 const path = require("path");
 const hbs = require("hbs");
 const app = express();
+const cookieSession = require("cookie-session");
+const passport = require("passport");
 require("../db/conn");
+require('./passport_setup.js'); 
+//path for all the views
 const static_path = path.join(__dirname,"../public");
 const templatPath = path.join(__dirname,"../server/templates/views");
 const partialPath = path.join(__dirname,"../server/templates/partials");
 
-app.use(express.json());
-app.use(express.urlencoded({extended:false}));
-
-
-
 const User = require("../model/userSchema");
-
 
 router.use(express.static(static_path));
 app.set("view engine","hbs");
 app.set("views",templatPath);
 hbs.registerPartials(partialPath);
+
+//UI Code here
 //home page code here
 router.get("/",(req , res) =>{
     res.render("index");
@@ -32,16 +32,52 @@ router.get("/signin",(req , res) =>{
     res.render("signin");
 });
 
+router.get("/register",(req , res) =>{
+    res.render("register");
+});
+
+router.get('/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
+
+router.use(cookieSession({
+    name: 'tuto-session',
+    keys: ['key1', 'key2']
+  }));
+
+const isLoggedIn = (req, res, next) => {
+    if (req.user) {
+        next();
+    } else {
+        res.sendStatus(401);
+    }
+}
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.get('/failed', (req, res) => res.send('You Failed to log in!'))
+
+app.get('/good', isLoggedIn, (req, res) =>{
+    res.render("index");
+})
+
+app.get('/google/callback', passport.authenticate('google', { failureRedirect: '/failed' }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect('/good');
+  }
+);
+app.get('/logout', (req, res) => {
+    req.session = null;
+    req.logout();
+    res.redirect('/');
+})
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+//save values here
 //registration page code here
 router.post("/register",async (req,res) => {
-
-    //create variables for feilds
-    const {firstName,lastName,email,password} = req.body
-
-    //check empty credentials
-    if(!firstName || !email || !password){
-        res.status(422).json({error: "please fill all the field"})
-    }
+    //create variables of feilds
+    const {firstName,lastName,email,password} = req.body;
 
     try{
 
@@ -53,9 +89,13 @@ router.post("/register",async (req,res) => {
         else{
             const user = new User({firstName,lastName,email,password});     //create current user
 
-            await user.save();
+            const done = await user.save();
 
-            res.status(201).json({message:"user registerd successfully"});
+            if(done){
+                res.render("index");
+            }else{
+                res.render("signin");
+            }
 
         }
 
