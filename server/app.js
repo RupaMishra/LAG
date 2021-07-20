@@ -27,10 +27,8 @@ app.get("/",(req , res) =>{
     res.render("index");
 });
 
-//app.use("cors()");
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));  
-// app.use(express.static(static_path));
 app.use(require('./routes/auth'));
 const user = require("./model/userSchema"); //connection to user
 
